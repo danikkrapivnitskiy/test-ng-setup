@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Xml run suite" parallel="classes">
+    <listeners>
+        <listener class-name="Listener"/>
+    </listeners>
+    <test name="Run Test Throw Xml">
+        <classes>
+            <class name="RunTestThroughXml"/>
+        </classes>
+    </test>
+</suite>
