@@ -4,6 +4,7 @@
         <listener class-name="Listener"/>
     </listeners>
     <test name="Run Test Throw Xml">
+        <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="RunTestThroughXml"/>
         </classes>

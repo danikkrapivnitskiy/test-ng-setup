@@ -12,11 +12,11 @@ public class Listener implements IInvokedMethodListener {
     @Override
     public void afterInvocation(IInvokedMethod method, ITestResult testResult) {
         IInvokedMethodListener.super.afterInvocation(method, testResult);
-       if (testResult.getStatus() == ITestResult.FAILURE && RunTestThroughXml.driver != null) {
+       if (testResult.getStatus() == ITestResult.FAILURE && BaseTest.driver != null) {
             try {
-                byte[] screenshot = ((TakesScreenshot) RunTestThroughXml.driver).getScreenshotAs(OutputType.BYTES);
-                String screenshotPath = "screenshots";
-                File screenshotFile = new File(screenshotPath + "/" + testResult.getName() + ".png");
+                byte[] screenshot = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.BYTES);
+                String screenshotPath = "screenshots/";
+                File screenshotFile = new File(screenshotPath + testResult.getName() + ".png");
                 FileUtils.writeByteArrayToFile(screenshotFile, screenshot);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
